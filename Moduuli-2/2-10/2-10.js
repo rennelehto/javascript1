@@ -22,8 +22,8 @@ for (let a = 1; a <= voters; a++){
 
 ehdokkaat.sort((a, b) => b.nnet - a.nnet)
 
-document.querySelector('#tulos').innerHTML = `Äänestyksen voittaja on ${ehdokkaat[0].nimi}, saatuaan ääniä ${ehdokkaat[0].nnet} kpl.`;
-const tulostus = document.querySelector('#lista')
+console.log(`Äänestyksen voittaja on ${ehdokkaat[0].nimi}, saatuaan ääniä ${ehdokkaat[0].nnet} kpl.`);
+
 for (let r = 0; r < ehdokkaat.length; r++){
-  tulostus.innerHTML += `<li> ${ehdokkaat[r].nimi}: ääniä ${ehdokkaat[r].nnet} kpl. </li>`;
+  console.log(`${ehdokkaat[r].nimi}: ääniä ${ehdokkaat[r].nnet} kpl.`);
 }
