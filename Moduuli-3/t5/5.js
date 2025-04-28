@@ -94,12 +94,25 @@ const picArray = [
 
 const section = document.querySelector('#pictures');
 for (let r = 0; r < picArray.length; r++){
-	section.innerHTML += `<article class="card">
-   <h2>${picArray[r].title}</h2>
-   <figure>
-      <img src="${picArray[r].image.medium}" alt="${picArray[r].title}">
-      <figcaption>${picArray[r].caption}</figcaption>
-   </figure>
-   <p>${picArray[r].description}</p>
-</article>`
+	const article = document.createElement('article');
+  article.className = 'card';
+	const h2text = document.createTextNode(`${picArray[r].title}`);
+	const h2 = document.createElement('h2');
+	const figure = document.createElement('figure');
+	const img = document.createElement('img');
+	img.src = picArray[r].image.medium;
+	img.alt = picArray[r].title;
+	const figcaptiontext = document.createTextNode(`${picArray[r].caption}`);
+	const figcaption = document.createElement('figcaption');
+	const ptext = document.createTextNode(`${picArray[r].description}`);
+	const p = document.createElement('p');
+	h2.appendChild(h2text);
+	figure.appendChild(img);
+	figcaption.appendChild(figcaptiontext);
+	figure.appendChild(figcaption);
+	p.appendChild(ptext);
+	article.appendChild(h2);
+	article.appendChild(figure);
+	article.appendChild(p);
+	section.appendChild(article);
 }
